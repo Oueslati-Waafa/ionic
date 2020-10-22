@@ -1,0 +1,45 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+
+    <ion-title>
+      Todo
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content color="primary" fullscreen>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Todo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-button [routerLink]="['/new']" color="secondary" expand="block">
+    Add todo
+    <ion-icon name="add-circle" slot="start"></ion-icon>
+  </ion-button>
+
+  <ion-list style="background: var(--ion-color-primary);">
+    <ion-item *ngFor="let todo of todos let i = index">
+      {{todo.title}}
+      <div class="item-note" item-end>
+        <div slot="end">
+          {{todo.note}}
+          </div>
+        <button ion-button clear (click)="updateTask(i)" >
+          <ion-icon name="create" ></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteTask(i)" >
+          <ion-icon name="close-circle" color="danger"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+    
+
+
+     
+          
+  </ion-list>
+
+</ion-content>

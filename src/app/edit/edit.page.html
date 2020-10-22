@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Edit task
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary" fullscreen>
+<form>
+  <ion-item>
+    <ion-label>Todo : </ion-label>
+    <ion-input type="text" [(ngModel)]="title" name="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Note : </ion-label>
+    <ion-textarea inputId="textarea" rows="3" cols="30" [(ngModel)]="note" name="note"></ion-textarea>
+  </ion-item>
+  <ion-button  ion-button type="submit" color="secondary" expand="block"  (click)="upda()"> <ion-icon name="add-circle" slot="start"></ion-icon>Add Todo</ion-button>
+</form>
+
+
+</ion-content>
